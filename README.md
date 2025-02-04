@@ -1,6 +1,6 @@
 # Sample Analyzer
 
-This program analiyze the notes and tempo of a song usin librosa and Matplotlib.
+This program analyzes the notes and tempo of a song using librosa and Matplotlib.
 
 ## Notes graph.
 
