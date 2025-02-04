@@ -13,8 +13,12 @@ note_mapping = {
 def note_to_latin(note):
     """Convierte una nota en inglés a notación latina."""
     if note:
-        base_note = note[:-1]  # Extraer la nota sin la octava
-        octave = note[-1]  # Extraer la octava
+        if len(note) > 1 and note[1] in ['♯', '♭']:  # Nota con alteración
+            base_note = note[:2]  # Extraer la nota con alteración
+            octave = note[2:]  # Extraer la octava
+        else:  # Nota sin alteración
+            base_note = note[0]  # Nota base
+            octave = note[1:]  # Octava
         return f"{note_mapping.get(base_note, base_note)}{octave}"
     return note
 
